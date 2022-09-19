@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<style>
+				table,tr,td,th{
+				border:1px solid;
+				border-collapse:collapse;
+				}
+				table{
+					width:1000px;
+					height:180px;
+					text-align:center;
+					margin:30px 80px;
+					margin-bottom:400px;
+					}
+				button{
+					width:100px;
+					height:30px;
+				}
+				h1{
+					text-align:center;
+					    margin-right: 130px;
+				}	
+			</style>
+<body>			
+	<h1>table detail</h1>
+		<table>
+			<tr>
+				<th>protect</th>
+				<th>unit price</th>
+				<th>qty</th>
+				<th>calculate</th>
+				<th>price</th>
+			</tr>
+			<tr>
+				<td>mobile</td>
+				<td class="unitprice">15000</td>
+				<td>
+					<input type="number" class="qty">
+				</td>
+				<td><button class="btn">click</button></td>
+				<td class="total"></td>
+			</tr>
+				<tr>
+				<td>tv</td>
+				<td class="unitprice">35000</td>
+				<td>
+					<input type="number" class="qty">
+				</td>
+				<td><button class="btn">click</button></td>
+				<td class="total"></td>
+			</tr>
+			<tr>
+				<td>laptop</td>
+				<td class="unitprice">50000</td>
+				<td>
+					<input type="number" class="qty">
+				</td>
+				<td><button class="btn">click</button></td>
+				<td class="total"></td>
+			</tr>
+		</table>
+	
+<script>
+	
+	
+	function calculate(){
+	var unitprice,qty,total,
+	
+	 documents=this.parentNode.parentNode,
+	 unitprices=documents.getElementsByClassName("unitprice")[0],
+	 qtys=documents.getElementsByClassName("qty")[0],
+	 totals=documents.getElementsByClassName("total")[0];
+	
+	unitprice=unitprices.innerText;
+	qty=qtys.value;
+	total=unitprice*qty;
+	totals.innerText=total;
+	}
+	
+	
+	let btn=document.getElementsByClassName("btn");
+	
+	
+	for(var i=0;i<btn.length; i++){
+	
+		btn[i].addEventListener("click",calculate);
+	}
+	
+	
+	/*function totalprice(){
+	
+	var unitprice,qty,total,
+	
+	documents=this.parentNode.parentNode,
+	unit=documents.getElementsByClassName("unitprice")[0],
+	quantity=documents.getElementsByClassName("qty")[0],
+	overallprice=documents.getElementsByClassName("total")[0];
+	
+	
+	unitprice=unit.innerText;
+	qty=quantity.value;
+	total=unitprice*qty;
+	overallprice.innerText=total;
+	
+	}
+	
+	let btns=document.getElementsByClassName("btn")
+	
+	for(i=0; i<btns.length; i++){
+		btns[i].addEventListener("click",totalprice);
+	}*/
+</script>		
+			
+</body>
+</html>
